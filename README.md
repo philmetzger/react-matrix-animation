@@ -31,14 +31,18 @@ export default async function Page() {
 
 ```javascript
 // Size of the character elements.
-tileSize = 20,
+tileSize = 20
 
 // A higher fade factor will make the characters fade quicker.
-fadeFactor = 0.05,
+fadeFactor = 0.05
 
 // Background color.
-backgroundColor = '#030303',
+backgroundColor = '#030303'
 
 // Font color.
-fontColor = '#008529',
+fontColor = '#008529'
 ```
+
+## Contribution
+
+I appreciate any contributions to this repo!
