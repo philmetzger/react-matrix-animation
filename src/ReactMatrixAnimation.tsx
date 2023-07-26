@@ -12,10 +12,10 @@ interface Column {
 
 type HEX = `#${string}`;
 interface MatrixEffect {
-    tileSize: number; // Size of the character elements.
-    fadeFactor: number; // A higher fade factor will make the characters fade quicker.
-    backgroundColor: HEX; // Background color.
-    fontColor: HEX; // Font color.
+    tileSize?: number; // Size of the character elements.
+    fadeFactor?: number; // A higher fade factor will make the characters fade quicker.
+    backgroundColor?: HEX; // Background color.
+    fontColor?: HEX; // Font color.
 }
 
 const hexToRgb = (hexValue: HEX) => {
