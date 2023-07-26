@@ -1,0 +1,40 @@
+{
+  "name": "react-matrix-animation",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/withbackdrop/react-matrix-animation.git"
+  },
+  "version": "0.0.3",
+  "description": "The matrix falling text effect in React using an HTML canvas",
+  "author": "Christian Behler then reactified by @raphacaixeta + @strange_quirks",
+  "license": "MIT",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rm -rf dist/ && npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc",
+    "build:cjs": "tsc --module CommonJS --outDir dist/cjs"
+  },
+  "keywords": [
+    "React",
+    "Matrix",
+    "Effect",
+    "Animation",
+    "Canvas"
+  ],
+  "devDependencies": {
+    "@types/node": "^20.1.7",
+    "@types/react": "^18.2.6",
+    "@types/react-dom": "^18.2.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^5.1.6"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
