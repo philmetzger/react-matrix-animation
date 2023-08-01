@@ -107,7 +107,7 @@ const ReactMatrixAnimation = ({
     }
 
     function getRandomCharacter() {
-        if (tileSet && Array.isArray(tileSet) && tileSet.length > 1) {
+        if (tileSet && Array.isArray(tileSet) && tileSet.length > 0) {
             const random = Math.floor(Math.random() * tileSet.length);
             return tileSet[random];
         }
