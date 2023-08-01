@@ -30,17 +30,20 @@ export default async function Page() {
 ### Options & Defaults
 
 ```javascript
-// Size of the character elements.
+// Size of the character elements. Number value.
 tileSize = 20
 
-// A higher fade factor will make the characters fade quicker.
+// A higher fade factor will make the characters fade quicker. Number value.
 fadeFactor = 0.05
 
-// Background color.
+// Background color. Hex value.
 backgroundColor = '#030303'
 
-// Font color.
+// Font color. Hex value.
 fontColor = '#008529'
+
+// the values for the falling tiles. Array of strings. e.g. ["0", "1"]
+tileSet = null
 ```
 
 ## Contribution

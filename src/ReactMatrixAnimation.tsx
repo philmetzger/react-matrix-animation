@@ -13,6 +13,7 @@ interface Column {
 type HEX = `#${string}`;
 interface MatrixEffect {
     tileSize?: number; // Size of the character elements.
+    tileSet?: string[]; // A string array of characters.
     fadeFactor?: number; // A higher fade factor will make the characters fade quicker.
     backgroundColor?: HEX; // Background color.
     fontColor?: HEX; // Font color.
@@ -34,6 +35,7 @@ const ReactMatrixAnimation = ({
     fadeFactor = 0.05,
     backgroundColor = '#030303',
     fontColor = '#008529',
+    tileSet,
 }: MatrixEffect) => {
     let canvas: HTMLCanvasElement;
     let ctx: CanvasRenderingContext2D;
@@ -104,6 +106,16 @@ const ReactMatrixAnimation = ({
         }
     }
 
+    function getRandomCharacter() {
+        if (tileSet && Array.isArray(tileSet) && tileSet.length > 1) {
+            const random = Math.floor(Math.random() * tileSet.length);
+            return tileSet[random];
+        }
+
+        // Pick a random ascii character (change the 94 to a higher number to include more characters).
+        return String.fromCharCode(33 + Math.floor(Math.random() * 94));
+    }
+
     function draw() {
         // Draw a semi transparent black rectangle on top of the scene to slowly fade older characters.
         ctx.fillStyle = `rgba(${rgbBackground?.r ?? 3}, ${rgbBackground?.g ?? 3}, ${rgbBackground?.b ?? 3}, ${fadeFactor})`;
@@ -112,8 +124,7 @@ const ReactMatrixAnimation = ({
         ctx.fillStyle = `rgb(${rgbFont?.r ?? 0}, ${rgbFont?.g ?? 133}, ${rgbFont?.b ?? 41})`;
 
         for (let i = 0; i < columns.length; ++i) {
-            // Pick a random ascii character (change the 94 to a higher number to include more characters).
-            const randomCharacter = String.fromCharCode(33 + Math.floor(Math.random() * 94));
+            const randomCharacter = getRandomCharacter();
             ctx.fillText(randomCharacter, columns[i].x, columns[i].stackCounter * tileSize + tileSize);
 
             // If the stack is at its height limit, pick a new random height and reset the counter.
