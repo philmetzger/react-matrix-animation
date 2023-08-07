@@ -48,4 +48,4 @@ tileSet = null
 
 ## Contribution
 
-I appreciate any contributions to this repo!
+I appreciate any contributions to this repo! Feel free to get in touch with me [here](https://twitter.com/strange_quirks).
